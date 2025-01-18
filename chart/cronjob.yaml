@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: go-cronjob
+spec:
+  schedule: "0 0 1 * *" # Runs on the 1st of the month at midnight
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: go-cronjob
+            image: <your-dockerhub-username>/go-cronjob:latest
+            imagePullPolicy: IfNotPresent
+            resources:
+              requests:
+                memory: "64Mi"  # Minimum memory required
+                cpu: "250m"     # Minimum CPU required
+              limits:
+                memory: "128Mi" # Maximum memory allowed
+                cpu: "500m"     # Maximum CPU allowed
+          restartPolicy: OnFailure
