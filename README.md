@@ -14,7 +14,7 @@ This repository illustrates how to create a simple Go application, containerize 
 1.	Docker installed and configured.
 2.	Kubernetes cluster with kubectl configured.
 
-# Steps to Run Locally
+## Steps to Run Locally
 
 1.	Build and Run the Go Application
 
